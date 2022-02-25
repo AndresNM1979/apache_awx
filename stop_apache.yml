@@ -1,0 +1,8 @@
+---
+- name: ensure httpd is stopped
+tasks:
+  - name: Executing a command line
+command: /etc/init.d/apache2 stop
+handlers:
+  - name: stop Apache for reconfiguration
+service: 'name=apache2 state=stopped'
